@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "ManyAlg01/1.0.0": {
+        "runtime": {
+          "ManyAlg01.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ManyAlg01/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

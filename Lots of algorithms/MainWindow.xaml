@@ -1,0 +1,259 @@
+﻿<Window x:Class="ManyAlg01.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ManyAlg01"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="900">
+    <Grid Margin="0,0,0,-5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="311*"/>
+            <RowDefinition Height="124*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/main_back_texture.jpg"/>
+        </Grid.Background>
+        <Canvas HorizontalAlignment="Left" Height="218" VerticalAlignment="Top" Width="246" RenderTransformOrigin="0.5,0.5" Margin="8,10,0,0">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+            <Button Content="Возвести" Canvas.Top="138" Height="42" Width="226" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="10" Click="BtnExpModul" FontSize="14">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFB6B6B6" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <RichTextBox x:Name="numberPowerRTB" Height="25" Width="114" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="66" Canvas.Top="10">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="Число"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <RichTextBox x:Name="modul_powerRTB" Height="23" Width="114" Canvas.Top="71" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="66" FontSize="14">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="Модуль"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <RichTextBox x:Name="powerRTB" Height="26" Width="114" Canvas.Top="40" Canvas.Left="66" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="14">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="Степень"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <RichTextBox x:Name="resultPowerRTB" Height="24" Width="114" HorizontalAlignment="Center" Canvas.Top="99" VerticalAlignment="Top" Canvas.Left="66" FontSize="14">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="Результат"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <Label Content="Возведение числа в степень по модулю" Canvas.Top="185" Height="26" Width="226" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="10"/>
+        </Canvas>
+        <Canvas Margin="0,10,0,0" HorizontalAlignment="Center" Width="244" Height="218" VerticalAlignment="Top">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+            <RichTextBox x:Name="number_nRTB" Height="26" Width="141" HorizontalAlignment="Center" Canvas.Left="51" VerticalAlignment="Top" Canvas.Top="19">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="Число n"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <RichTextBox x:Name="number_mRTB" Height="27" Width="140" Canvas.Left="52" Canvas.Top="50" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="Число m"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <RichTextBox x:Name="result_nmRTB" Height="27" Width="141" Canvas.Top="82" Canvas.Left="51" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="Результат"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <Button Content="Вычислить" Canvas.Top="138" Height="42" Width="226" Canvas.Left="8" Click="BtnGCD" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFB6B6B6" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Label Content="Вычисление НОД" Canvas.Top="185" Height="26" Width="110" FontWeight="Bold" Canvas.Left="66" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </Canvas>
+        <Canvas HorizontalAlignment="Right" Height="218" VerticalAlignment="Top" Width="246" RenderTransformOrigin="0.5,0.5" Margin="0,10,10,0">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+            <Canvas.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+            <Button Content="Рассчитать" Canvas.Top="138" Height="42" Width="226" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="10" Click="BtnMultInv" FontSize="14">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFB6B6B6" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <RichTextBox x:Name="numberMultInvRTB" Height="25" Width="114" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="66" Canvas.Top="26">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="Число"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <RichTextBox x:Name="modul_multinvRTB" Height="23" Width="114" Canvas.Top="56" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="66" FontSize="14">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="Модуль"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <RichTextBox x:Name="resultMultInvRTB" Height="24" Width="114" HorizontalAlignment="Center" Canvas.Top="85" VerticalAlignment="Top" Canvas.Left="66" FontSize="14">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="Результат"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <Label Content="Вычисление мультипликативной инверсии" Canvas.Top="185" Height="26" Width="246" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </Canvas>
+        <Canvas Margin="10,290,0,0" HorizontalAlignment="Left" Width="244" Height="218" VerticalAlignment="Top" Grid.RowSpan="2">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+            <RichTextBox x:Name="number_testfermaRTB" Height="26" Width="141" HorizontalAlignment="Center" Canvas.Left="51" VerticalAlignment="Top" Canvas.Top="19">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="Проверяемое число"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <RichTextBox x:Name="number_randfermaRTB" Height="27" Width="141" Canvas.Left="51" Canvas.Top="50" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="Случайное число"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <RichTextBox x:Name="result_testfermaRTB" Height="27" Width="141" Canvas.Top="82" Canvas.Left="51" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="Результат"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <Button Content="Протестировать" Canvas.Top="138" Height="42" Width="226" Canvas.Left="8" Click="BtnTestFerma" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFB6B6B6" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Label Content="Тест Ферма" Canvas.Top="185" Height="26" Width="72" FontWeight="Bold" Canvas.Left="85" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </Canvas>
+        <Canvas Margin="0,290,0,0" HorizontalAlignment="Center" Width="244" Height="216" VerticalAlignment="Top" Grid.RowSpan="2">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+            <RichTextBox x:Name="number_MRtestRTB" Height="26" Width="141" HorizontalAlignment="Center" Canvas.Left="51" VerticalAlignment="Top" Canvas.Top="19">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="Число"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <RichTextBox x:Name="result_MRtestRTB" Height="27" Width="141" Canvas.Top="82" Canvas.Left="51" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="Результат"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <Button Content="Тестировать" Canvas.Top="138" Height="42" Width="226" Canvas.Left="8" Click="BtnTestMilleraRabina" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFB6B6B6" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Label Content="Тест Миллера-Рабина" Canvas.Top="185" Height="26" Width="128" FontWeight="Bold" Canvas.Left="58" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </Canvas>
+        <Canvas Margin="0,290,12,0" HorizontalAlignment="Right" Width="244" Height="216" VerticalAlignment="Top" Grid.RowSpan="2">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+            <RichTextBox x:Name="sizeRTB" Height="26" Width="141" HorizontalAlignment="Center" Canvas.Left="51" VerticalAlignment="Top" Canvas.Top="19">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="Размер"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <RichTextBox x:Name="result_bignumberRTB1" Height="27" Width="141" Canvas.Top="82" Canvas.Left="51" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <FlowDocument>
+                    <Paragraph>
+                        <Run Text="Результат"/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <Button Content="Затестировать" Canvas.Top="138" Height="42" Width="226" Canvas.Left="8" Click="BtnBigNumGeneration" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFB6B6B6" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Label Content="Генерация простого большого числа" Canvas.Top="185" Height="26" Width="208" FontWeight="Bold" Canvas.Left="18" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </Canvas>
+    </Grid>
+</Window>
